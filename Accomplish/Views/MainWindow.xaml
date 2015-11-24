@@ -13,6 +13,6 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Margin="5" FontSize="32" TextWrapping="Wrap">Goals</TextBlock>
-        
+        <views:GoalView Grid.Row="1"></views:GoalView>
     </Grid>
 </Window>

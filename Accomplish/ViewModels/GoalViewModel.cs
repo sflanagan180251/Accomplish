@@ -12,9 +12,14 @@ namespace Accomplish.ViewModels
             this.goal = goal;
         }
 
+        public GoalViewModel(IGoalFactory goalFactory)
+        {
+            goal = goalFactory.Create();
+        }
+
         public GoalViewModel()
         {
-            goal = new Goal();
+            
         }
 
         public string Description
@@ -23,11 +28,13 @@ namespace Accomplish.ViewModels
             {
                 return goal.Description;
             }
-
             set
             {
-                goal.Description = value;
-                OnPropertyChanged(() => Description);
+                if (goal.Description != value)
+                {
+                    goal.Description = value;
+                    OnPropertyChanged(() => Description);
+                }
             }
         }
 
@@ -37,11 +44,13 @@ namespace Accomplish.ViewModels
             {
                 return goal.Title;
             }
-
             set
             {
-                goal.Title = value;
-                OnPropertyChanged(() => Title);
+                if (goal.Title != value)
+                {
+                    goal.Title = value;
+                    OnPropertyChanged(() => Title);
+                }
             }
         }
     }
