@@ -8,9 +8,9 @@
              xmlns:viewModels="clr-namespace:Accomplish.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <!--<UserControl.DataContext>
+    <UserControl.DataContext>
         <viewModels:GoalViewModel />
-    </UserControl.DataContext>-->
+    </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

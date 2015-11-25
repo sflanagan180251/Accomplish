@@ -5,36 +5,18 @@ namespace Accomplish.ViewModels
 {
     internal sealed class GoalViewModel : BindableBase, IGoalViewModel
     {
-        private readonly IGoal goal;
-
-        internal GoalViewModel(IGoal goal)
-        {
-            this.goal = goal;
-        }
-
-        public GoalViewModel(IGoalFactory goalFactory)
-        {
-            goal = goalFactory.Create();
-        }
-
-        public GoalViewModel()
-        {
-            
-        }
+        private string description;
+        private string title;
 
         public string Description
         {
             get
             {
-                return goal.Description;
+                return description;
             }
             set
             {
-                if (goal.Description != value)
-                {
-                    goal.Description = value;
-                    OnPropertyChanged(() => Description);
-                }
+                SetProperty(ref description, value);
             }
         }
 
@@ -42,15 +24,11 @@ namespace Accomplish.ViewModels
         {
             get
             {
-                return goal.Title;
+                return title;
             }
             set
             {
-                if (goal.Title != value)
-                {
-                    goal.Title = value;
-                    OnPropertyChanged(() => Title);
-                }
+                SetProperty(ref title, value);
             }
         }
     }

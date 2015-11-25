@@ -96,8 +96,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\GoalFactory.cs" />
-    <Compile Include="Model\IGoalFactory.cs" />
+    <Compile Include="Bootstrapper.cs" />
     <Compile Include="ViewModels\GoalViewModel.cs" />
     <Compile Include="ViewModels\IGoalViewModel.cs" />
     <Compile Include="Views\GoalView.xaml.cs">

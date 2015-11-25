@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Accomplish.ViewModels;
+using Microsoft.Practices.ServiceLocation;
 
 namespace Accomplish.Views
 {
@@ -24,11 +25,6 @@ namespace Accomplish.Views
         public GoalView()
         {
             InitializeComponent();
-        }
-
-        public GoalView(IGoalViewModel viewModel) : this()
-        {
-            this.DataContext = viewModel;
         }
     }
 }
