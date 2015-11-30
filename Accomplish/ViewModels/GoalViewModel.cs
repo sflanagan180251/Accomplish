@@ -1,9 +1,9 @@
 ﻿using Accomplish.Model;
-using Microsoft.Practices.Prism.Mvvm;
+using Prism.Mvvm;
 
 namespace Accomplish.ViewModels
 {
-    internal sealed class GoalViewModel : BindableBase, IGoalViewModel
+    internal sealed class GoalViewModel : BindableBase
     {
         private string description;
         private string title;

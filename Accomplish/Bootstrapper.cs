@@ -15,11 +15,14 @@ namespace Accomplish
     {
         protected override DependencyObject CreateShell()
         {
-            return ServiceLocator.Current.GetInstance<MainWindow>();
+            return ServiceLocator.Current.GetInstance<Shell>();
         }
 
         protected override void InitializeShell()
         {
+            base.InitializeShell();
+
+            Application.Current.MainWindow = (Window) this.Shell;
             Application.Current.MainWindow.Show();
         }
 
