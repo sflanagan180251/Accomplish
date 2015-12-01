@@ -1,5 +1,6 @@
 ﻿using System.Windows.Controls;
 using Accomplish.ViewModels;
+using Prism.Events;
 
 namespace Accomplish.Views
 {
@@ -8,10 +9,10 @@ namespace Accomplish.Views
     /// </summary>
     public partial class RibbonView : UserControl
     {
-        public RibbonView()
+        public RibbonView(RibbonViewModel ribbonViewModel)
         {
             InitializeComponent();
-            DataContext = new RibbonViewModel();
+            DataContext = ribbonViewModel;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,13 +24,13 @@ namespace Accomplish
             base.InitializeShell();
 
             Application.Current.MainWindow = (Window) this.Shell;
+
             Application.Current.MainWindow.Show();
         }
 
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
-
             // TODO: register any types needed
         }
     }

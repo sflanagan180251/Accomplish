@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
+using Accomplish.Model;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 
 namespace Accomplish.ViewModels
 {
-    internal sealed class RibbonViewModel : BindableBase
+    public sealed class RibbonViewModel : BindableBase
     {
         public ICommand CreateCommand
         {
@@ -17,9 +14,41 @@ namespace Accomplish.ViewModels
             private set;
         }
 
-        public RibbonViewModel()
+        public ICommand OpenCommand
         {
-            //CreateCommand = new DelegateCommand();
+            get;
+            private set;
+        }
+
+        public ICommand AddCommand
+        {
+            get;
+            private set;
+        }
+
+        public ICommand SaveCommand
+        {
+            get;
+            private set;
+        }
+
+        public RibbonViewModel(IEventAggregator eventAggregator)
+        {
+            CreateCommand = new DelegateCommand(
+                () => { },
+                () => false);
+
+            OpenCommand = new DelegateCommand(
+                () => { },
+                () => false);
+
+            AddCommand = new DelegateCommand(
+                () => eventAggregator.GetEvent<RibbonEvent>().Publish(RibbonEvent.Event.Add),
+                () => true);
+
+            SaveCommand = new DelegateCommand(
+                () => { },
+                () => false);
         }
     }
 }

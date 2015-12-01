@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Accomplish.Views"
+             xmlns:views="clr-namespace:Accomplish.Views"
+             xmlns:properties="clr-namespace:Accomplish.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel Orientation="Horizontal">
-        <Button Command="{Binding CreateCommand}">Create</Button>
-        <Button Command="{Binding OpenCommand}">Open</Button>
-        <Button Command="{Binding AddCommand}">Add</Button>
-        <Button Command="{Binding SaveCommand}">Save</Button>
-        <Button Command="{Binding CloseCommand}">Close</Button>
+        <Button Command="{Binding CreateCommand}" Content="{x:Static properties:Resources.Create}" />
+        <Button Command="{Binding OpenCommand}" Content="{x:Static properties:Resources.Open}" />
+        <Button Command="{Binding AddCommand}" Content="{x:Static properties:Resources.Add}"/>
+        <Button Command="{Binding SaveCommand}" Content="{x:Static properties:Resources.Save}"/>
     </StackPanel>
 </UserControl>
