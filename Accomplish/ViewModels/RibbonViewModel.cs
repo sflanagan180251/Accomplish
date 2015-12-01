@@ -6,7 +6,7 @@ using Prism.Mvvm;
 
 namespace Accomplish.ViewModels
 {
-    public sealed class RibbonViewModel : BindableBase
+    public sealed class RibbonViewModel : BindableBase, IRibbonViewModel
     {
         public ICommand CreateCommand
         {

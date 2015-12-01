@@ -8,6 +8,8 @@ using System.Windows;
 using Accomplish.ViewModels;
 using Accomplish.Views;
 using Microsoft.Practices.ServiceLocation;
+using Microsoft.Practices.Unity;
+using Prism.Events;
 using Prism.Unity;
 
 namespace Accomplish
@@ -31,7 +33,13 @@ namespace Accomplish
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
-            // TODO: register any types needed
+
+            Container.RegisterType<Shell>();
+            Container.RegisterType<IRibbonViewModel, RibbonViewModel>();
+            Container.RegisterType<RibbonView>();
+
+            IEventAggregator eventAggregator = Container.Resolve<IEventAggregator>();
+
         }
     }
 }

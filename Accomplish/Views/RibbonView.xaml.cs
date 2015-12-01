@@ -1,5 +1,6 @@
 ﻿using System.Windows.Controls;
 using Accomplish.ViewModels;
+using Microsoft.Practices.ServiceLocation;
 using Prism.Events;
 
 namespace Accomplish.Views
@@ -9,10 +10,10 @@ namespace Accomplish.Views
     /// </summary>
     public partial class RibbonView : UserControl
     {
-        public RibbonView(RibbonViewModel ribbonViewModel)
+        public RibbonView()
         {
             InitializeComponent();
-            DataContext = ribbonViewModel;
+            DataContext = ServiceLocator.Current.GetInstance<IRibbonViewModel>();
         }
     }
 }
