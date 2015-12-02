@@ -26,7 +26,6 @@ namespace Accomplish
             base.InitializeShell();
 
             Application.Current.MainWindow = (Window) this.Shell;
-
             Application.Current.MainWindow.Show();
         }
 
@@ -34,9 +33,9 @@ namespace Accomplish
         {
             base.ConfigureContainer();
 
-            Container.RegisterType<Shell>();
             Container.RegisterType<IRibbonViewModel, RibbonViewModel>();
             Container.RegisterType<RibbonView>();
+            Container.RegisterType<Shell>();
 
             IEventAggregator eventAggregator = Container.Resolve<IEventAggregator>();
 

@@ -15,9 +15,7 @@
         </ResourceDictionary>
     </Window.Resources>-->
     <DockPanel>
-        <StackPanel>
-            <views:RibbonView />
-        </StackPanel>
+        <views:RibbonView DockPanel.Dock="Top"/>
         <Grid>
             <views:ContentView />
         </Grid>
