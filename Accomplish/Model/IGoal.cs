@@ -1,18 +1,18 @@
-﻿using System;
-
-namespace Accomplish.Model
+﻿namespace Accomplish.Model
 {
+    using System;
+
     internal interface IGoal
     {
-        Guid Id
-        {
-            get;
-        }
-
         string Description
         {
             get;
             set;
+        }
+
+        Guid Id
+        {
+            get;
         }
 
         string Title

@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Accomplish.Model
+﻿namespace Accomplish.Model
 {
+    using System;
+
     internal sealed class Goal : IGoal
     {
         public Goal(Guid id)
@@ -9,7 +9,7 @@ namespace Accomplish.Model
             Id = id;
         }
 
-        public string Title
+        public string Description
         {
             get;
             set;
@@ -21,7 +21,7 @@ namespace Accomplish.Model
             private set;
         }
 
-        public string Description
+        public string Title
         {
             get;
             set;

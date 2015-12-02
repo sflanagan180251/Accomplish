@@ -1,10 +1,10 @@
-﻿using Prism.Events;
-
-namespace Accomplish.Model
+﻿namespace Accomplish.Model
 {
-    internal sealed class RibbonEvent : PubSubEvent<RibbonEvent.Event>
+    using Prism.Events;
+
+    internal class RibbonEvent : PubSubEvent<RibbonEvent.EventType>
     {
-        public enum Event
+        public enum EventType
         {
             Create,
             Open,

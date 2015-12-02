@@ -7,13 +7,6 @@
         xmlns:viewmodels="clr-namespace:Accomplish.ViewModels"
         mc:Ignorable="d"
         Title="Shell" Height="300" Width="300">
-    <!--<Window.Resources>
-        <ResourceDictionary>
-            <DataTemplate DataType="{x:Type viewmodels:RibbonViewModel}">
-                <views:RibbonView />
-            </DataTemplate>
-        </ResourceDictionary>
-    </Window.Resources>-->
     <DockPanel>
         <views:RibbonView DockPanel.Dock="Top"/>
         <Grid>

@@ -1,8 +1,9 @@
-﻿using System.Windows;
-using Prism.Events;
-
-namespace Accomplish
+﻿namespace Accomplish
 {
+    using System.Windows;
+
+    using Prism.Events;
+
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
