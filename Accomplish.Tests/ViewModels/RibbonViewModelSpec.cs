@@ -26,5 +26,17 @@
             Then("a save command will be instantiated", () => Assert.IsNotNull(SUT.SaveCommand));
             Then("the save command will not be executable", () => Assert.IsFalse(SUT.SaveCommand.CanExecute(null)));
         }
+
+        public void AddCommand()
+        {
+            When("the add command is executed", () => SUT.AddCommand.Execute(null));
+
+            Given(() =>
+            {
+                Set(Mock<RibbonEvent>());
+                Get<IEventAggregator>().Stub(eventAggregator => eventAggregator.GetEvent<RibbonEvent>()).Return(Get<RibbonEvent>());
+            }).Verify(() =>
+                Then("the add ribbon event is published", () => Get<RibbonEvent>().AssertWasCalled(ribbonEvent => ribbonEvent.Publish(RibbonEvent.EventType.Add))));
+        }
     }
 }
