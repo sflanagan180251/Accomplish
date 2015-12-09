@@ -9,12 +9,6 @@
             Id = id;
         }
 
-        public string Description
-        {
-            get;
-            set;
-        }
-
         public Guid Id
         {
             get;
@@ -22,6 +16,24 @@
         }
 
         public string Title
+        {
+            get;
+            set;
+        }
+
+        public string Description
+        {
+            get;
+            set;
+        }
+
+        public DateTime Start
+        {
+            get;
+            set;
+        }
+
+        public bool Complete
         {
             get;
             set;

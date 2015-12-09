@@ -11,11 +11,11 @@
     using Rhino.Mocks;
     using SpecEasy;
 
-    internal sealed class ContentViewModelSpec : Spec<ContentViewModel>
+    internal sealed class GoalListViewModelSpec : Spec<GoalListViewModel>
     {
         public void Construction()
         {
-            When("the content view model is constructed", () => SUT = Get<ContentViewModel>());
+            When("the goal list view model is constructed", () => SUT = Get<GoalListViewModel>());
 
             Given(() =>
             {
@@ -25,20 +25,34 @@
                 Then("the ribbon event will be subscribed to", () => Get<RibbonEvent>().AssertWasCalled(ribbonEvent => ribbonEvent.Subscribe(Arg<Action<RibbonEvent.EventType>>.Is.Anything, Arg<ThreadOption>.Is.Anything, Arg<bool>.Is.Anything, Arg<Predicate<RibbonEvent.EventType>>.Is.Anything))));
         }
 
-        public void RibbonEventSubscription()
+        public void AddEvent()
         {
             RibbonEvent.EventType? eventType = null;
 
             When("a ribbon event is raised",
                 () =>
-            {
-                SUT = Get<ContentViewModel>();
-                Debug.Assert(eventType != null, "eventType != null");
-                Get<IEventAggregator>().GetEvent<RibbonEvent>().Publish(eventType.Value);
-            });
+                {
+                    SUT = Get<GoalListViewModel>();
+                    Debug.Assert(eventType != null, "eventType != null");
+                    Get<IEventAggregator>().GetEvent<RibbonEvent>().Publish(eventType.Value);
+                });
 
             Given(() => Set<IEventAggregator>(new EventAggregator())).Verify(() => EnumUtils.GetValues<RibbonEvent.EventType>().ToList().ForEach(eventTypeToRaise => Given("the eventType to raise is " + eventTypeToRaise, () => eventType = eventTypeToRaise).Verify(() =>
-                Then("the event value will be stored as " + eventTypeToRaise + " in the content text", () => Assert.AreEqual(eventTypeToRaise.ToString(), SUT.ContentText)))));
+            {
+                switch (eventTypeToRaise)
+                {
+                    case RibbonEvent.EventType.Create:
+                    case RibbonEvent.EventType.Open:
+                    case RibbonEvent.EventType.Save:
+                        Then("a goal is not added to the collection", () => Assert.AreEqual(0, SUT.Goals.Count()));
+                        break;
+                    case RibbonEvent.EventType.Add:
+                        Then("a goal is added to the collection", () => Assert.AreEqual(1, SUT.Goals.Count()));
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException("Implement functionality for missing enum " + eventType);
+                }
+            })));
         }
     }
 }

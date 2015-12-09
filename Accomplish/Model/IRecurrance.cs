@@ -2,32 +2,27 @@
 {
     using System;
 
-    internal interface IGoal
+    public interface IRecurrance
     {
-        Guid Id
-        {
-            get;
-        }
-
-        string Title
+        WhenToRecur WhenToRecur
         {
             get;
             set;
         }
 
-        string Description
+        TimeSpan Period
         {
             get;
             set;
         }
 
-        DateTime Start
+        DateTime? Expires
         {
             get;
             set;
         }
 
-        bool Complete
+        int? Remaining
         {
             get;
             set;

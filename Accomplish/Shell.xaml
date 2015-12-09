@@ -9,6 +9,7 @@
         Title="Shell" Height="300" Width="300">
     <DockPanel>
         <views:RibbonView DockPanel.Dock="Top"/>
+        <views:GoalListView DockPanel.Dock="Left"/>
         <Grid>
             <views:ContentView />
         </Grid>

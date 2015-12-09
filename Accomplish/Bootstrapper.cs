@@ -30,6 +30,8 @@
             Container.RegisterType<RibbonView>();
             Container.RegisterType<IContentViewModel, ContentViewModel>();
             Container.RegisterType<ContentView>();
+            Container.RegisterType<IGoalListViewModel, GoalListViewModel>();
+            Container.RegisterType<GoalListView>();
             Container.RegisterType<Shell>();
         }
     }

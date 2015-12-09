@@ -1,22 +1,24 @@
 ﻿namespace Accomplish.Views
 {
     using System.ComponentModel;
+    using System.Windows.Controls;
     using Accomplish.ViewModels;
     using Microsoft.Practices.ServiceLocation;
 
-    public partial class RibbonView
+    public partial class GoalListView : UserControl
     {
-        public RibbonView() : this(null)
+        public GoalListView()
+            : this(null)
         {
         }
 
-        internal RibbonView(IRibbonViewModel ribbonViewModel)
+        internal GoalListView(IGoalListViewModel goalListViewModel)
         {
             InitializeComponent();
 
             if (!DesignerProperties.GetIsInDesignMode(this))
             {
-                DataContext = ribbonViewModel ?? ServiceLocator.Current.GetInstance<IRibbonViewModel>();
+                DataContext = goalListViewModel ?? ServiceLocator.Current.GetInstance<IGoalListViewModel>();
             }
         }
     }

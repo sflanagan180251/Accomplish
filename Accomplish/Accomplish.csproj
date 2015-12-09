@@ -103,17 +103,24 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Model\IRecurrance.cs" />
+    <Compile Include="Model\WhenToRecur.cs" />
     <Compile Include="Model\RibbonEvent.cs" />
     <Compile Include="Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ContentViewModel.cs" />
+    <Compile Include="ViewModels\GoalListViewModel.cs" />
     <Compile Include="ViewModels\GoalViewModel.cs" />
     <Compile Include="ViewModels\IContentViewModel.cs" />
+    <Compile Include="ViewModels\IGoalListViewModel.cs" />
     <Compile Include="ViewModels\IRibbonViewModel.cs" />
     <Compile Include="ViewModels\RibbonViewModel.cs" />
     <Compile Include="Views\ContentView.xaml.cs">
       <DependentUpon>ContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoalListView.xaml.cs">
+      <DependentUpon>GoalListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GoalView.xaml.cs">
       <DependentUpon>GoalView.xaml</DependentUpon>
@@ -130,6 +137,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoalListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

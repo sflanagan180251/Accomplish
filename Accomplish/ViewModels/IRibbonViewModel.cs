@@ -2,7 +2,7 @@ namespace Accomplish.ViewModels
 {
     using System.Windows.Input;
 
-    public interface IRibbonViewModel
+    internal interface IRibbonViewModel
     {
         ICommand AddCommand
         {
