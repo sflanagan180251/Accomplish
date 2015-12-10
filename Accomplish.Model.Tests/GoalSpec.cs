@@ -1,7 +1,7 @@
-﻿namespace Accomplish.Tests.Model
+﻿namespace Accomplish.Model.Tests
 {
     using System;
-    using Accomplish.Model;
+    using Accomplish.Model.Internal;
     using NUnit.Framework;
     using SpecEasy;
 

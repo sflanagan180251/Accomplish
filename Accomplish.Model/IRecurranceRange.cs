@@ -2,15 +2,9 @@
 {
     using System;
 
-    public interface IRecurrance
+    public interface IRecurranceRange
     {
-        WhenToRecur WhenToRecur
-        {
-            get;
-            set;
-        }
-
-        TimeSpan Period
+        DateTime Start
         {
             get;
             set;
@@ -27,5 +21,6 @@
             get;
             set;
         }
+
     }
 }

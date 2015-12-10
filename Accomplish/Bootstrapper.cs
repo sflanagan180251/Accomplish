@@ -1,6 +1,7 @@
 ﻿namespace Accomplish
 {
     using System.Windows;
+    using Accomplish.Model;
     using Accomplish.ViewModels;
     using Accomplish.Views;
     using Microsoft.Practices.ServiceLocation;
@@ -26,6 +27,7 @@
         {
             base.ConfigureContainer();
 
+            Container.RegisterType<IGoalFactory, GoalFactory>();
             Container.RegisterType<IRibbonViewModel, RibbonViewModel>();
             Container.RegisterType<RibbonView>();
             Container.RegisterType<IContentViewModel, ContentViewModel>();

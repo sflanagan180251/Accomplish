@@ -1,4 +1,4 @@
-﻿namespace Accomplish.Model
+﻿namespace Accomplish.Model.Enum
 {
     public enum WhenToRecur
     {

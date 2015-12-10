@@ -3,14 +3,18 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using Accomplish.Model;
+    using Accomplish.Model.Enum;
+    using Model;
     using Prism.Events;
     using Prism.Mvvm;
 
     internal sealed class GoalListViewModel : BindableBase, IGoalListViewModel
     {
-        public GoalListViewModel(IEventAggregator eventAggregator)
+        private readonly IGoalFactory goalFactory;
+
+        public GoalListViewModel(IEventAggregator eventAggregator, IGoalFactory goalFactory)
         {
+            this.goalFactory = goalFactory;
             Goals = new ObservableCollection<IGoal>();
 
             eventAggregator.GetEvent<RibbonEvent>().Subscribe(eventType =>
@@ -40,7 +44,7 @@
 
         private void AddEvent()
         {
-            Goals.Add(new Goal(Guid.NewGuid()));
+            Goals.Add(goalFactory.Create());
         }
     }
 }

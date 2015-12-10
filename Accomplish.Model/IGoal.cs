@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal interface IGoal
+    public interface IGoal
     {
         Guid Id
         {
@@ -16,12 +16,6 @@
         }
 
         string Description
-        {
-            get;
-            set;
-        }
-
-        DateTime Start
         {
             get;
             set;

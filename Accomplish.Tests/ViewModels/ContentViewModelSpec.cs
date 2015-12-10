@@ -4,7 +4,7 @@
     using System.Diagnostics;
     using System.Linq;
     using Accomplish.Common.Utils;
-    using Accomplish.Model;
+    using Accomplish.Model.Enum;
     using Accomplish.ViewModels;
     using NUnit.Framework;
     using Prism.Events;

@@ -1,6 +1,6 @@
 ﻿namespace Accomplish.ViewModels
 {
-    using Accomplish.Model;
+    using Accomplish.Model.Enum;
     using Prism.Events;
     using Prism.Mvvm;
 

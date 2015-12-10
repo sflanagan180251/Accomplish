@@ -1,8 +1,8 @@
-﻿namespace Accomplish.Model
+﻿namespace Accomplish.Model.Enum
 {
     using Prism.Events;
 
-    internal class RibbonEvent : PubSubEvent<RibbonEvent.EventType>
+    public class RibbonEvent : PubSubEvent<RibbonEvent.EventType>
     {
         public enum EventType
         {

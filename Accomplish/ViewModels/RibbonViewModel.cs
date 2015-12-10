@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Windows.Input;
-    using Accomplish.Model;
+    using Accomplish.Model.Enum;
     using Prism.Commands;
     using Prism.Events;
     using Prism.Mvvm;

@@ -1,4 +1,4 @@
-﻿namespace Accomplish.Model
+﻿namespace Accomplish.Model.Internal
 {
     using System;
 
@@ -22,12 +22,6 @@
         }
 
         public string Description
-        {
-            get;
-            set;
-        }
-
-        public DateTime Start
         {
             get;
             set;
