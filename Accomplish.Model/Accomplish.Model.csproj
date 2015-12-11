@@ -49,8 +49,10 @@
     <Compile Include="Enum\Weeks.cs" />
     <Compile Include="Enum\WhenToRecur.cs" />
     <Compile Include="GoalFactory.cs" />
+    <Compile Include="GuidFactory.cs" />
     <Compile Include="IGoal.cs" />
     <Compile Include="IGoalFactory.cs" />
+    <Compile Include="IGuidFactory.cs" />
     <Compile Include="Internal\Goal.cs" />
     <Compile Include="IRecurrancePattern.cs" />
     <Compile Include="IRecurranceRange.cs" />

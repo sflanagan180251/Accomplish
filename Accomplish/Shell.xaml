@@ -6,10 +6,10 @@
         xmlns:views="clr-namespace:Accomplish.Views"
         xmlns:viewmodels="clr-namespace:Accomplish.ViewModels"
         mc:Ignorable="d"
-        Title="Shell" Height="300" Width="300">
+        Title="Shell" Height="600" Width="800">
     <DockPanel>
         <views:RibbonView DockPanel.Dock="Top"/>
-        <views:GoalListView DockPanel.Dock="Left"/>
+        <views:GoalListView DockPanel.Dock="Left" MinWidth="300"/>
         <Grid>
             <views:ContentView />
         </Grid>

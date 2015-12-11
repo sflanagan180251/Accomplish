@@ -5,9 +5,16 @@
 
     public sealed class GoalFactory : IGoalFactory
     {
+        private readonly IGuidFactory guidFactory;
+
+        public GoalFactory(IGuidFactory guidFactory)
+        {
+            this.guidFactory = guidFactory;
+        }
+
         public IGoal Create()
         {
-            return new Goal(Guid.NewGuid());
+            return new Goal { Id = guidFactory.NewGuid() };
         }
     }
 }

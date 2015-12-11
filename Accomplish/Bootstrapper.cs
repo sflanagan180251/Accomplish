@@ -27,6 +27,7 @@
         {
             base.ConfigureContainer();
 
+            Container.RegisterType<IGuidFactory, GuidFactory>();
             Container.RegisterType<IGoalFactory, GoalFactory>();
             Container.RegisterType<IRibbonViewModel, RibbonViewModel>();
             Container.RegisterType<RibbonView>();

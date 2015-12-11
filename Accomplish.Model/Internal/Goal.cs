@@ -2,17 +2,13 @@
 {
     using System;
 
+    [Serializable]
     internal sealed class Goal : IGoal
     {
-        public Goal(Guid id)
-        {
-            Id = id;
-        }
-
         public Guid Id
         {
             get;
-            private set;
+            set;
         }
 
         public string Title
