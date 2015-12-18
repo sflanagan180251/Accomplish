@@ -1,6 +1,7 @@
 ﻿namespace Accomplish.Model.Internal
 {
     using System;
+    using System.Collections.Generic;
 
     [Serializable]
     internal sealed class Goal : IGoal
@@ -24,6 +25,12 @@
         }
 
         public bool Complete
+        {
+            get;
+            set;
+        }
+
+        public IGoalList GoalList
         {
             get;
             set;

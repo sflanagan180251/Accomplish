@@ -63,6 +63,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ContentViewModelSpec.cs" />
     <Compile Include="ViewModels\GoalListViewModelSpec.cs" />
+    <Compile Include="ViewModels\RibbonApplicationMenuViewModelSpec.cs" />
+    <Compile Include="ViewModels\RibbonTabViewModelSpec.cs" />
     <Compile Include="ViewModels\RibbonViewModelSpec.cs" />
   </ItemGroup>
   <ItemGroup>

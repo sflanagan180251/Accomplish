@@ -1,50 +1,48 @@
 ﻿namespace Accomplish.ViewModels
 {
-    using System.Collections.Generic;
-    using System.Windows.Input;
-    using Accomplish.Model.Enum;
-    using Prism.Commands;
+    using System;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using Accomplish.Factories;
+    using Accomplish.Model;
+    using Accomplish.Model.Events;
+    using Accomplish.Views;
     using Prism.Events;
     using Prism.Mvvm;
 
     public sealed class RibbonViewModel : BindableBase, IRibbonViewModel
     {
-        public RibbonViewModel(IEventAggregator eventAggregator)
+        private readonly IRibbonTabViewFactory ribbonTabViewFactory;
+
+        public RibbonViewModel(IEventAggregator eventAggregator, IRibbonTabViewFactory ribbonTabViewFactory)
         {
-            AddCommand =
-                new DelegateCommand(
-                    () => eventAggregator.GetEvent<RibbonEvent>().Publish(RibbonEvent.EventType.Add),
-                    () => true);
+            this.ribbonTabViewFactory = ribbonTabViewFactory;
 
-            CreateCommand = new DelegateCommand(() => { }, () => false);
+            RibbonTabs = new ObservableCollection<RibbonTabView>();
 
-            OpenCommand = new DelegateCommand(() => { }, () => false);
+            eventAggregator.GetEvent<NewGoalListEvent>()
+                .Subscribe(AddRibbonTab);
 
-            SaveCommand = new DelegateCommand(() => { }, () => false);
+            eventAggregator.GetEvent<CloseGoalListEvent>()
+                .Subscribe(RemoveRibbonTab);
         }
 
-        public ICommand AddCommand
+        public ObservableCollection<RibbonTabView> RibbonTabs { get; set; }
+
+        private void AddRibbonTab(IGoalList goalList)
         {
-            get;
-            private set;
+            RibbonTabs.Add(ribbonTabViewFactory.Create(goalList));
         }
 
-        public ICommand CreateCommand
+        private void RemoveRibbonTab(IGoalList goalList)
         {
-            get;
-            private set;
-        }
+            // TODO: figure out how the ribbontabviewmodel can remove itself from the list
+            // var ribbonTabToRemove = RibbonTabs.FirstOrDefault(ribbonTab => (ribbonTab.DataContext As IGoalList).Uid == goalList.Id.ToString());
 
-        public ICommand OpenCommand
-        {
-            get;
-            private set;
-        }
-
-        public ICommand SaveCommand
-        {
-            get;
-            private set;
+            // if (ribbonTabToRemove != null)
+            // {
+            //    RibbonTabs.Remove(ribbonTabToRemove);
+            // }
         }
     }
 }

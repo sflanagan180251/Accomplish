@@ -1,6 +1,7 @@
 ﻿namespace Accomplish
 {
     using System.Windows;
+    using Accomplish.Factories;
     using Accomplish.Model;
     using Accomplish.ViewModels;
     using Accomplish.Views;
@@ -27,8 +28,17 @@
         {
             base.ConfigureContainer();
 
+            Container.RegisterType<IApplication, ApplicationWrapper>();
             Container.RegisterType<IGuidFactory, GuidFactory>();
             Container.RegisterType<IGoalFactory, GoalFactory>();
+            Container.RegisterType<IGoalListFactory, GoalListFactory>();
+
+            Container.RegisterType<IRibbonTabViewFactory, RibbonTabViewFactory>();
+            Container.RegisterType<IRibbonTabViewModelFactory, RibbonTabViewModelFactory>();
+            Container.RegisterType<IRibbonApplicationMenuViewModel, RibbonApplicationMenuViewModel>();
+            Container.RegisterType<RibbonApplicationMenuView>();
+            Container.RegisterType<IRibbonTabViewModel, RibbonTabViewModel>();
+            Container.RegisterType<RibbonTabView>();
             Container.RegisterType<IRibbonViewModel, RibbonViewModel>();
             Container.RegisterType<RibbonView>();
             Container.RegisterType<IContentViewModel, ContentViewModel>();

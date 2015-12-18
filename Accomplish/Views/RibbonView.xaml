@@ -4,20 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:properties="clr-namespace:Accomplish.Properties"
+            xmlns:views="clr-namespace:Accomplish.Views"
+            xmlns:viewmodels="clr-namespace:Accomplish.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition SharedSizeGroup="RibbonButtonSizeGroup" />
-                <ColumnDefinition SharedSizeGroup="RibbonButtonSizeGroup" />
-                <ColumnDefinition SharedSizeGroup="RibbonButtonSizeGroup" />
-                <ColumnDefinition SharedSizeGroup="RibbonButtonSizeGroup" />
-            </Grid.ColumnDefinitions>
-            <Grid.Children>
-            <Button Grid.Column="0" Command="{Binding CreateCommand}" Content="{x:Static properties:Resources.Create}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"/>
-            <Button Grid.Column="1" Command="{Binding OpenCommand}" Content="{x:Static properties:Resources.Open}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"/>
-            <Button Grid.Column="2" Command="{Binding AddCommand}" Content="{x:Static properties:Resources.Add}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"/>
-            <Button Grid.Column="3" Command="{Binding SaveCommand}" Content="{x:Static properties:Resources.Save}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"/>
-            </Grid.Children>
-        </Grid>
+    <Ribbon ItemsSource="{Binding RibbonTabs}">
+        <Ribbon.ApplicationMenu >
+            <views:RibbonApplicationMenuView />
+        </Ribbon.ApplicationMenu>
+    </Ribbon>
 </UserControl>

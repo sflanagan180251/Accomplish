@@ -83,6 +83,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -102,7 +103,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ApplicationWrapper.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Factories\IRibbonTabViewModelFactory.cs" />
+    <Compile Include="Factories\IRibbonTabViewFactory.cs" />
+    <Compile Include="Factories\RibbonTabViewFactory.cs" />
+    <Compile Include="Factories\RibbonTabViewModelFactory.cs" />
     <Compile Include="Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
@@ -111,7 +117,11 @@
     <Compile Include="ViewModels\GoalViewModel.cs" />
     <Compile Include="ViewModels\IContentViewModel.cs" />
     <Compile Include="ViewModels\IGoalListViewModel.cs" />
+    <Compile Include="ViewModels\IRibbonApplicationMenuViewModel.cs" />
+    <Compile Include="ViewModels\IRibbonTabViewModel.cs" />
     <Compile Include="ViewModels\IRibbonViewModel.cs" />
+    <Compile Include="ViewModels\RibbonApplicationMenuViewModel.cs" />
+    <Compile Include="ViewModels\RibbonTabViewModel.cs" />
     <Compile Include="ViewModels\RibbonViewModel.cs" />
     <Compile Include="Views\ContentView.xaml.cs">
       <DependentUpon>ContentView.xaml</DependentUpon>
@@ -125,6 +135,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\RibbonApplicationMenuView.xaml.cs">
+      <DependentUpon>RibbonApplicationMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RibbonTabView.xaml.cs">
+      <DependentUpon>RibbonTabView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RibbonView.xaml.cs">
       <DependentUpon>RibbonView.xaml</DependentUpon>
@@ -142,6 +158,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\GoalView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RibbonApplicationMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RibbonTabView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -6,10 +6,7 @@
     {
         public enum EventType
         {
-            Create,
-            Open,
             Add,
-            Save
         }
     }
 }

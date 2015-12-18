@@ -21,14 +21,8 @@
             {
                 switch (eventType)
                 {
-                    case RibbonEvent.EventType.Create:
-                        break;
-                    case RibbonEvent.EventType.Open:
-                        break;
                     case RibbonEvent.EventType.Add:
                         AddEvent();
-                        break;
-                    case RibbonEvent.EventType.Save:
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(eventType), eventType, null);

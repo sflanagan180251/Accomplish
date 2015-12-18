@@ -41,11 +41,6 @@
             {
                 switch (eventTypeToRaise)
                 {
-                    case RibbonEvent.EventType.Create:
-                    case RibbonEvent.EventType.Open:
-                    case RibbonEvent.EventType.Save:
-                        Then("a goal is not added to the collection", () => Assert.AreEqual(0, SUT.Goals.Count()));
-                        break;
                     case RibbonEvent.EventType.Add:
                         Then("a goal is added to the collection", () => Assert.AreEqual(1, SUT.Goals.Count()));
                         break;

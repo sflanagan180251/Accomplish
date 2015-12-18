@@ -6,8 +6,8 @@
         xmlns:views="clr-namespace:Accomplish.Views"
         xmlns:viewmodels="clr-namespace:Accomplish.ViewModels"
         mc:Ignorable="d"
-        Title="Shell" Height="600" Width="800">
-    <DockPanel>
+        Title="Shell" Height="600" Width="800" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}">
+    <DockPanel >
         <views:RibbonView DockPanel.Dock="Top"/>
         <views:GoalListView DockPanel.Dock="Left" MinWidth="300"/>
         <Grid>
