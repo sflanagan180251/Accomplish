@@ -36,13 +36,12 @@
 
         private void RemoveRibbonTab(IGoalList goalList)
         {
-            // TODO: figure out how the ribbontabviewmodel can remove itself from the list
-            // var ribbonTabToRemove = RibbonTabs.FirstOrDefault(ribbonTab => (ribbonTab.DataContext As IGoalList).Uid == goalList.Id.ToString());
+            var ribbonTabToRemove = RibbonTabs.FirstOrDefault(ribbonTab => ribbonTab.Uid == goalList.Id.ToString());
 
-            // if (ribbonTabToRemove != null)
-            // {
-            //    RibbonTabs.Remove(ribbonTabToRemove);
-            // }
+            if (ribbonTabToRemove != null)
+            {
+               RibbonTabs.Remove(ribbonTabToRemove);
+            }
         }
     }
 }
