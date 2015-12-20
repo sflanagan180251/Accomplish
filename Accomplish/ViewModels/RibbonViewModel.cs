@@ -36,7 +36,7 @@
 
         private void RemoveRibbonTab(IGoalList goalList)
         {
-            var ribbonTabToRemove = RibbonTabs.FirstOrDefault(ribbonTab => ribbonTab.Uid == goalList.Id.ToString());
+            var ribbonTabToRemove = RibbonTabs.FirstOrDefault(ribbonTab => (ribbonTab.DataContext as IRibbonTabViewModel)?.GoalList == goalList);
 
             if (ribbonTabToRemove != null)
             {

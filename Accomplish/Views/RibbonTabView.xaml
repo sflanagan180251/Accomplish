@@ -8,7 +8,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Header="{Binding GoalList.Id}" Uid="{Binding GoalList.Id}">
         <RibbonGroup Header="{x:Static properties:Resources.Commands}">
-            <RibbonButton Command="{Binding AddCommand}" Label="{x:Static properties:Resources.Add}"/>
-            <RibbonButton Command="{Binding CloseCommand}" Label="{x:Static properties:Resources.Close}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+            <RibbonButton Grid.Column="0" Command="{Binding AddCommand}" Label="{x:Static properties:Resources.Add}"/>
+            <RibbonButton Grid.Column="1" Command="{Binding CloseCommand}" Label="{x:Static properties:Resources.Close}"/>
+        </Grid>
     </RibbonGroup>
 </RibbonTab>
