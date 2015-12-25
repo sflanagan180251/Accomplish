@@ -4,13 +4,13 @@
 
     public sealed class AddGoalEventArgs : EventArgs
     {
-        public AddGoalEventArgs(IGoalList goalList, int position)
+        public AddGoalEventArgs(IGoalContainer goalContainer, int position)
         {
-            GoalList = goalList;
+            GoalContainer = goalContainer;
             Position = position;
         }
 
-        public IGoalList GoalList
+        public IGoalContainer GoalContainer
         {
             get;
         }

@@ -2,12 +2,11 @@
 {
     using System;
 
-    public interface IGoalCollection : IUnique, IGoalContainer
+    public interface IUnique
     {
-        string Title
+        Guid Id
         {
             get;
-            set;
         }
     }
 }

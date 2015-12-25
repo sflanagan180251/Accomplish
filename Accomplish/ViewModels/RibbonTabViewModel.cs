@@ -17,7 +17,7 @@
             AddCommand =
                 new DelegateCommand(
                     () => eventAggregator.GetEvent<AddGoalEvent>()
-                              .Publish(new AddGoalEventArgs(GoalCollection, GoalCollection.Count())),
+                              .Publish(new AddGoalEventArgs(GoalCollection, GoalCollection.GoalList.Count())),
                     () => true);
 
             CloseCommand =

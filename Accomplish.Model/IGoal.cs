@@ -2,13 +2,8 @@
 {
     using System;
 
-    public interface IGoal
+    public interface IGoal : IUnique, IGoalContainer
     {
-        Guid Id
-        {
-            get;
-        }
-
         string Title
         {
             get;

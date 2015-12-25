@@ -4,7 +4,7 @@
     using System.Collections;
     using System.Collections.Generic;
 
-    internal sealed class GoalCollection : GoalList, IGoalCollection
+    internal sealed class GoalCollection : IGoalCollection
     {
         public GoalCollection(Guid id)
         {
@@ -19,6 +19,12 @@
         public string Title
         {
             get; set;
+        }
+
+        public IGoalList GoalList
+        {
+            get;
+            set;
         }
     }
 }
