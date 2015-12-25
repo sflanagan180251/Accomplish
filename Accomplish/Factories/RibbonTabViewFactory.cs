@@ -12,9 +12,9 @@
             this.ribbonTabViewModelFactory = ribbonTabViewModelFactory;
         }
 
-        public RibbonTabView Create(IGoalList goalList)
+        public RibbonTabView Create(IGoalCollection goalCollection)
         {
-            return new RibbonTabView(ribbonTabViewModelFactory.Create(goalList));
+            return new RibbonTabView(ribbonTabViewModelFactory.Create(goalCollection));
         }
     }
 }

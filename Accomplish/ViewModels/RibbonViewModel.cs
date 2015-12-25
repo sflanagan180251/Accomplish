@@ -20,23 +20,28 @@
 
             RibbonTabs = new ObservableCollection<RibbonTabView>();
 
-            eventAggregator.GetEvent<NewGoalListEvent>()
+            eventAggregator.GetEvent<GoalCollectionCreatedEvent>()
                 .Subscribe(AddRibbonTab);
 
-            eventAggregator.GetEvent<CloseGoalListEvent>()
+            eventAggregator.GetEvent<CloseGoalCollectionEvent>()
                 .Subscribe(RemoveRibbonTab);
         }
 
         public ObservableCollection<RibbonTabView> RibbonTabs { get; set; }
 
-        private void AddRibbonTab(IGoalList goalList)
+        private void AddRibbonTab(IGoalCollection goalCollection)
         {
-            RibbonTabs.Add(ribbonTabViewFactory.Create(goalList));
+            RibbonTabs.Add(ribbonTabViewFactory.Create(goalCollection));
         }
 
-        private void RemoveRibbonTab(IGoalList goalList)
+        private void RemoveRibbonTab(IGoalCollection goalCollection)
         {
-            var ribbonTabToRemove = RibbonTabs.FirstOrDefault(ribbonTab => (ribbonTab.DataContext as IRibbonTabViewModel)?.GoalList == goalList);
+            var ribbonTabToRemove =
+                (from ribbonTab in RibbonTabs
+                where ribbonTab.DataContext is IRibbonTabViewModel
+                where ((IRibbonTabViewModel)ribbonTab.DataContext).GoalCollection == goalCollection
+                select ribbonTab)
+                .FirstOrDefault();
 
             if (ribbonTabToRemove != null)
             {

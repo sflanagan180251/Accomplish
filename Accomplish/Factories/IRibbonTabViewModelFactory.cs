@@ -5,6 +5,6 @@
 
     public interface IRibbonTabViewModelFactory
     {
-        IRibbonTabViewModel Create(IGoalList goalList); 
+        IRibbonTabViewModel Create(IGoalCollection goalCollection);
     }
 }

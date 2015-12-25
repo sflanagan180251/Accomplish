@@ -5,6 +5,6 @@
 
     public interface IRibbonTabViewFactory
     {
-        RibbonTabView Create(IGoalList goalList);
+        RibbonTabView Create(IGoalCollection goalCollection);
     }
 }

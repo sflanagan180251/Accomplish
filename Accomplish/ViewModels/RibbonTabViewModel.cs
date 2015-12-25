@@ -1,5 +1,6 @@
 ﻿namespace Accomplish.ViewModels
 {
+    using System.Linq;
     using System.Windows.Input;
     using Accomplish.Model;
     using Accomplish.Model.Events;
@@ -9,20 +10,20 @@
 
     public sealed class RibbonTabViewModel : BindableBase, IRibbonTabViewModel
     {
-        public RibbonTabViewModel(IEventAggregator eventAggregator, IGoalList goalList)
+        public RibbonTabViewModel(IEventAggregator eventAggregator, IGoalCollection goalCollection)
         {
-            this.GoalList = goalList;
+            this.GoalCollection = goalCollection;
 
             AddCommand =
                 new DelegateCommand(
                     () => eventAggregator.GetEvent<AddGoalEvent>()
-                              .Publish(goalList),
+                              .Publish(new AddGoalEventArgs(GoalCollection, GoalCollection.Count())),
                     () => true);
 
             CloseCommand =
                 new DelegateCommand(
-                    () => eventAggregator.GetEvent<CloseGoalListEvent>()
-                              .Publish(goalList),
+                    () => eventAggregator.GetEvent<CloseGoalCollectionEvent>()
+                              .Publish(goalCollection),
                     () => true);
         }
 
@@ -30,6 +31,6 @@
 
         public ICommand CloseCommand { get; }
 
-        public IGoalList GoalList { get; }
+        public IGoalCollection GoalCollection { get; }
     }
 }

@@ -13,9 +13,9 @@
             this.eventAggregator = eventAggregator;
         }
 
-        public IRibbonTabViewModel Create(IGoalList goalList)
+        public IRibbonTabViewModel Create(IGoalCollection goalCollection)
         {
-            return new RibbonTabViewModel(eventAggregator, goalList);
+            return new RibbonTabViewModel(eventAggregator, goalCollection);
         }
     }
 }

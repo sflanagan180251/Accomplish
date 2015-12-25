@@ -5,11 +5,11 @@
 
     public interface IRibbonTabViewModel
     {
-        IGoalList GoalList
+        IGoalCollection GoalCollection
         {
             get;
         }
-        
+
         ICommand AddCommand
         {
             get;

@@ -49,23 +49,31 @@
     <Compile Include="Enum\Weeks.cs" />
     <Compile Include="Enum\WhenToRecur.cs" />
     <Compile Include="Events\AddGoalEvent.cs" />
+    <Compile Include="Events\AddGoalEventArgs.cs" />
     <Compile Include="Events\ApplicationEvent.cs" />
-    <Compile Include="Events\CloseGoalListEvent.cs" />
-    <Compile Include="Events\NewGoalListEvent.cs" />
+    <Compile Include="Events\CloseGoalCollectionEvent.cs" />
+    <Compile Include="Events\GoalCollectionCreatedEvent.cs" />
+    <Compile Include="Events\NewGoalCollectionEvent.cs" />
+    <Compile Include="GoalCollectionFactory.cs" />
     <Compile Include="GoalFactory.cs" />
     <Compile Include="GoalListFactory.cs" />
     <Compile Include="GuidFactory.cs" />
     <Compile Include="IApplication.cs" />
     <Compile Include="IGoal.cs" />
+    <Compile Include="IGoalCollection.cs" />
+    <Compile Include="IGoalCollectionFactory.cs" />
     <Compile Include="IGoalFactory.cs" />
     <Compile Include="IGoalList.cs" />
     <Compile Include="IGoalListFactory.cs" />
     <Compile Include="IGuidFactory.cs" />
     <Compile Include="Internal\Goal.cs" />
+    <Compile Include="Internal\GoalCollection.cs" />
     <Compile Include="Internal\GoalList.cs" />
     <Compile Include="IRecurrancePattern.cs" />
     <Compile Include="IRecurranceRange.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\GoalCollectionService.cs" />
+    <Compile Include="Services\IGoalCollectionService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

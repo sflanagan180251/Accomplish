@@ -9,9 +9,9 @@
 
     public sealed class RibbonApplicationMenuViewModel : BindableBase, IRibbonApplicationMenuViewModel
     {
-        public RibbonApplicationMenuViewModel(IEventAggregator eventAggregator, IGoalListFactory goalListFactory)
+        public RibbonApplicationMenuViewModel(IEventAggregator eventAggregator)
         {
-            NewCommand = new DelegateCommand(() => eventAggregator.GetEvent<NewGoalListEvent>().Publish(goalListFactory.Create()),
+            NewCommand = new DelegateCommand(() => eventAggregator.GetEvent<NewGoalCollectionEvent>().Publish(new object()),
                 () => true);
 
             OpenCommand = new DelegateCommand(() =>

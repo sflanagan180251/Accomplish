@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Accomplish.Model.Events
 {
     using Prism.Events;
-    public sealed class AddGoalEvent : PubSubEvent<IGoalList>
+
+    public sealed class AddGoalEvent : PubSubEvent<AddGoalEventArgs>
     {
     }
 }
