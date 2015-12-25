@@ -105,6 +105,8 @@
     </ApplicationDefinition>
     <Compile Include="ApplicationWrapper.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Factories\AddGoalEventArgsFactory.cs" />
+    <Compile Include="Factories\IAddGoalEventArgsFactory.cs" />
     <Compile Include="Factories\IRibbonTabViewModelFactory.cs" />
     <Compile Include="Factories\IRibbonTabViewFactory.cs" />
     <Compile Include="Factories\RibbonTabViewFactory.cs" />

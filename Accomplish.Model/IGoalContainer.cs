@@ -2,10 +2,6 @@
 {
     public interface IGoalContainer
     {
-        IGoalList GoalList
-        {
-            get;
-            set;
-        }
+        IGoalList GoalList { get; set; }
     }
 }

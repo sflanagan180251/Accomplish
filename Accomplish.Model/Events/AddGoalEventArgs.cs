@@ -2,7 +2,7 @@
 {
     using System;
 
-    public sealed class AddGoalEventArgs : EventArgs
+    public class AddGoalEventArgs : EventArgs
     {
         public AddGoalEventArgs(IGoalContainer goalContainer, int position)
         {
@@ -10,14 +10,8 @@
             Position = position;
         }
 
-        public IGoalContainer GoalContainer
-        {
-            get;
-        }
+        public IGoalContainer GoalContainer { get; }
 
-        public int Position
-        {
-            get;
-        }
+        public int Position { get; }
     }
 }

@@ -1,30 +1,18 @@
 ﻿namespace Accomplish.Model.Internal
 {
     using System;
-    using System.Collections;
-    using System.Collections.Generic;
 
     internal sealed class GoalCollection : IGoalCollection
     {
-        public GoalCollection(Guid id)
+        public GoalCollection(Guid uid)
         {
-            Id = id;
+            Uid = uid;
         }
 
-        public Guid Id
-        {
-            get;
-        }
+        public IGoalList GoalList { get; set; }
 
-        public string Title
-        {
-            get; set;
-        }
+        public Guid Uid { get; }
 
-        public IGoalList GoalList
-        {
-            get;
-            set;
-        }
+        public string Title { get; set; }
     }
 }

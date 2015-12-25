@@ -4,23 +4,10 @@
 
     public interface IRecurranceRange
     {
-        DateTime Start
-        {
-            get;
-            set;
-        }
+        DateTime? Expires { get; set; }
 
-        DateTime? Expires
-        {
-            get;
-            set;
-        }
+        int? Remaining { get; set; }
 
-        int? Remaining
-        {
-            get;
-            set;
-        }
-
+        DateTime Start { get; set; }
     }
 }

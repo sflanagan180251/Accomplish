@@ -2,8 +2,7 @@
 {
     using Accomplish.ViewModels;
     using SpecEasy;
-
-    internal sealed class RibbonViewModelSpec : Spec<RibbonViewModel>
+    internal sealed class GoalViewModelSpec : Spec<GoalViewModel>
     {
         public void Construction()
         {

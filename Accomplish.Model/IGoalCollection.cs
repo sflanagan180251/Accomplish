@@ -1,13 +1,6 @@
 ﻿namespace Accomplish.Model
 {
-    using System;
-
-    public interface IGoalCollection : IUnique, IGoalContainer
+    public interface IGoalCollection : IUnique, IGoalContainer, ITitled
     {
-        string Title
-        {
-            get;
-            set;
-        }
     }
 }

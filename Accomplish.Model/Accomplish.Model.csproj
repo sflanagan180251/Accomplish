@@ -59,6 +59,7 @@
     <Compile Include="GoalListFactory.cs" />
     <Compile Include="GuidFactory.cs" />
     <Compile Include="IApplication.cs" />
+    <Compile Include="ICompletable.cs" />
     <Compile Include="IGoal.cs" />
     <Compile Include="IGoalCollection.cs" />
     <Compile Include="IGoalCollectionFactory.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Internal\GoalList.cs" />
     <Compile Include="IRecurrancePattern.cs" />
     <Compile Include="IRecurranceRange.cs" />
+    <Compile Include="ITitled.cs" />
     <Compile Include="IUnique.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GoalCollectionService.cs" />

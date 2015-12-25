@@ -17,7 +17,7 @@
             When("the goal is created", () => result = SUT.Create());
 
             Given("the guid provided to the goal is " + ExpectedGuidId, () => Get<IGuidFactory>().Stub(guidFactory => guidFactory.NewGuid()).Return(new Guid(ExpectedGuidId))).Verify(() =>
-                Then("the goal guid is " + ExpectedGuidId, () => Assert.IsTrue(ExpectedGuidId.Equals(result.Id.ToString("D"), StringComparison.InvariantCultureIgnoreCase))));
+                Then("the goal guid is " + ExpectedGuidId, () => Assert.IsTrue(ExpectedGuidId.Equals(result.Uid.ToString("D"), StringComparison.InvariantCultureIgnoreCase))));
         }
     }
 }

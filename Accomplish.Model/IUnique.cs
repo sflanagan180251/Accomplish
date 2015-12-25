@@ -4,9 +4,6 @@
 
     public interface IUnique
     {
-        Guid Id
-        {
-            get;
-        }
+        Guid Uid { get; }
     }
 }

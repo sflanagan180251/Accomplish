@@ -8,14 +8,17 @@
     {
         private readonly IEventAggregator eventAggregator;
 
-        public RibbonTabViewModelFactory(IEventAggregator eventAggregator)
+        private readonly IAddGoalEventArgsFactory addGoalEventArgsFactory;
+
+        public RibbonTabViewModelFactory(IEventAggregator eventAggregator, IAddGoalEventArgsFactory addGoalEventArgsFactory)
         {
             this.eventAggregator = eventAggregator;
+            this.addGoalEventArgsFactory = addGoalEventArgsFactory;
         }
 
         public IRibbonTabViewModel Create(IGoalCollection goalCollection)
         {
-            return new RibbonTabViewModel(eventAggregator, goalCollection);
+            return new RibbonTabViewModel(eventAggregator, goalCollection, addGoalEventArgsFactory);
         }
     }
 }

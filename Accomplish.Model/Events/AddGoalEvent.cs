@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Accomplish.Model.Events
+﻿namespace Accomplish.Model.Events
 {
     using Prism.Events;
 
-    public sealed class AddGoalEvent : PubSubEvent<AddGoalEventArgs>
+    public class AddGoalEvent : PubSubEvent<AddGoalEventArgs>
     {
     }
 }

@@ -2,7 +2,7 @@
 {
     using Prism.Events;
 
-    public sealed class NewGoalCollectionEvent : PubSubEvent<object>
+    public class NewGoalCollectionEvent : PubSubEvent<object>
     {
     }
 }

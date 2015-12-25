@@ -2,6 +2,6 @@
 {
     public interface IGoalCollectionFactory
     {
-        IGoalCollection Create(); 
+        IGoalCollection Create();
     }
 }

@@ -11,7 +11,7 @@
             <DataTemplate>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" SharedSizeGroup="IdGroup"></ColumnDefinition>
+                        <ColumnDefinition Width="*" SharedSizeGroup="UidGroup"></ColumnDefinition>
                         <ColumnDefinition Width="Auto" SharedSizeGroup="TitleGroup"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <TextBox Grid.Column="0" Text="{Binding Id}"></TextBox>

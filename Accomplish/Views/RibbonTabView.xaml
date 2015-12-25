@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Accomplish.Views"
              xmlns:properties="clr-namespace:Accomplish.Properties"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" Header="{Binding GoalCollection.Id}" Uid="{Binding GoalCollection.Id}">
+             d:DesignHeight="300" d:DesignWidth="300" Header="{Binding GoalCollection.Uid}" Uid="{Binding GoalCollection.Uid}">
         <RibbonGroup Header="{x:Static properties:Resources.Commands}">
             <Grid>
                 <Grid.ColumnDefinitions>

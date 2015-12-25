@@ -7,7 +7,11 @@
     {
         public GoalCollectionService(IEventAggregator eventAggregator, IGoalCollectionFactory goalCollectionFactory)
         {
-            eventAggregator.GetEvent<NewGoalCollectionEvent>().Subscribe(obj => eventAggregator.GetEvent<GoalCollectionCreatedEvent>().Publish(goalCollectionFactory.Create()), ThreadOption.PublisherThread, keepSubscriberReferenceAlive: true);
+            eventAggregator.GetEvent<NewGoalCollectionEvent>()
+                .Subscribe(obj => eventAggregator.GetEvent<GoalCollectionCreatedEvent>()
+                                      .Publish(goalCollectionFactory.Create()), 
+                    ThreadOption.PublisherThread, 
+                    keepSubscriberReferenceAlive: true);
         }
     }
 }

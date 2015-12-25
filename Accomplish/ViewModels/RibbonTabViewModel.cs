@@ -2,6 +2,7 @@
 {
     using System.Linq;
     using System.Windows.Input;
+    using Accomplish.Factories;
     using Accomplish.Model;
     using Accomplish.Model.Events;
     using Prism.Commands;
@@ -10,20 +11,20 @@
 
     public sealed class RibbonTabViewModel : BindableBase, IRibbonTabViewModel
     {
-        public RibbonTabViewModel(IEventAggregator eventAggregator, IGoalCollection goalCollection)
+        public RibbonTabViewModel(IEventAggregator eventAggregator, IGoalCollection goalCollection, IAddGoalEventArgsFactory addGoalEventArgsFactory)
         {
             this.GoalCollection = goalCollection;
 
             AddCommand =
                 new DelegateCommand(
                     () => eventAggregator.GetEvent<AddGoalEvent>()
-                              .Publish(new AddGoalEventArgs(GoalCollection, GoalCollection.GoalList.Count())),
+                              .Publish(addGoalEventArgsFactory.Create(GoalCollection)),
                     () => true);
 
             CloseCommand =
                 new DelegateCommand(
                     () => eventAggregator.GetEvent<CloseGoalCollectionEvent>()
-                              .Publish(goalCollection),
+                              .Publish(GoalCollection),
                     () => true);
         }
 

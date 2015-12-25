@@ -6,34 +6,14 @@
 
     public interface IRecurrancePattern
     {
-        WhenToRecur WhenToRecur
-        {
-            get;
-            set;
-        }
+        IEnumerable<int> DaysOfMonth { get; set; }
 
-        IEnumerable<DayOfWeek> DaysOfWeek
-        {
-            get;
-            set;
-        }
+        IEnumerable<DayOfWeek> DaysOfWeek { get; set; }
 
-        IEnumerable<int> DaysOfMonth
-        {
-            get;
-            set;
-        }
+        IEnumerable<int> MonthsOfYear { get; set; }
 
-        IEnumerable<Weeks> WeeksOfMonth
-        {
-            get;
-            set;
-        }
+        IEnumerable<Weeks> WeeksOfMonth { get; set; }
 
-        IEnumerable<int> MonthsOfYear
-        {
-            get;
-            set;
-        }
+        WhenToRecur WhenToRecur { get; set; }
     }
 }
